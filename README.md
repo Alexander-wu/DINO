@@ -13,7 +13,7 @@ Hao Wu, Yuan Gao, Fan Xu, Fan Zhang, Qingsong Wen, Xiaomeng Huang, Xian Wu
   <a href="#"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License"></a>
 </p>
 
-<img src="image/DINO_intro.png" width="95%"/>
+<img src="image/DINO_intro.png" width="70%"/>
 
 </div>
 
