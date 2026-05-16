@@ -2,7 +2,7 @@
 
 # DINO: Differential-Integral Neural Operator
 
-**Physics-decomposed neural operator for stable long-term turbulence forecasting**
+**Differential-Integral Neural Operator for Long-Term Turbulence Forecasting**
 
 Hao Wu, Yuan Gao, Fan Xu, Fan Zhang, Qingsong Wen, Xiaomeng Huang, Xian Wu
 
