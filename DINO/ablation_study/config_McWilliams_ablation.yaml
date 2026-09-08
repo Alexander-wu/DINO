@@ -1,0 +1,159 @@
+selected_model: 'IntegralOnlyDINO'
+
+models:  
+
+      
+  DINO:
+    parameters:
+      shape_in: [1, 1, 128, 128] # T C H W
+      spatial_hidden_dim: 128
+      output_channels: 1
+      temporal_hidden_dim: 256
+      num_spatial_layers: 4
+      num_temporal_layers: 8
+
+  DINO_wo_OperatorEvolution:
+    parameters:
+      shape_in: [1, 1, 128, 128] # T C H W
+      spatial_hidden_dim: 128
+      output_channels: 1
+      temporal_hidden_dim: 256
+      num_spatial_layers: 4
+      num_temporal_layers: 8
+
+  DINO_wo_MultiScaleProjection:
+    parameters:
+      shape_in: [1, 1, 128, 128] # T C H W
+      spatial_hidden_dim: 128
+      output_channels: 1
+      temporal_hidden_dim: 256
+      num_spatial_layers: 4
+      num_temporal_layers: 8
+
+  DifferentialOnlyDINO:
+    parameters:
+      shape_in: [1, 1, 128, 128] # T C H W
+      spatial_hidden_dim: 128
+      output_channels: 1
+      temporal_hidden_dim: 256
+      num_spatial_layers: 4
+      num_temporal_layers: 8
+
+  IntegralOnlyDINO:
+    parameters:
+      shape_in: [1, 1, 128, 128] # T C H W
+      spatial_hidden_dim: 128
+      output_channels: 1
+      temporal_hidden_dim: 256
+      num_spatial_layers: 4
+      num_temporal_layers: 8
+      
+trainings:
+  DINO:
+    batch_size: 20
+    num_epochs: 500
+    learning_rate: 0.001
+    seed: 42
+    parallel_method: 'DistributedDataParallel'
+
+  DINO_wo_OperatorEvolution:
+    batch_size: 20
+    num_epochs: 500
+    learning_rate: 0.001
+    seed: 42
+    parallel_method: 'DistributedDataParallel'
+
+  DINO_wo_MultiScaleProjection:
+    batch_size: 20
+    num_epochs: 500
+    learning_rate: 0.001
+    seed: 42
+    parallel_method: 'DistributedDataParallel'
+
+  DifferentialOnlyDINO:
+    batch_size: 20
+    num_epochs: 500
+    learning_rate: 0.001
+    seed: 42
+    parallel_method: 'DistributedDataParallel'
+
+  IntegralOnlyDINO:
+    batch_size: 20
+    num_epochs: 500
+    learning_rate: 0.001
+    seed: 42
+    parallel_method: 'DistributedDataParallel'
+
+datas:
+  DINO:
+    input_length: 1
+    target_length: 1
+    variables_input: [0]
+    variables_output: [0]
+    downsample_factor: 1
+    data_path: './data/McWilliams2d_fp32_128x128_N1280_Re5000_T100.pt'
+
+  DINO_wo_OperatorEvolution:
+    input_length: 1
+    target_length: 1
+    variables_input: [0]
+    variables_output: [0]
+    downsample_factor: 1
+    data_path: './data/McWilliams2d_fp32_128x128_N1280_Re5000_T100.pt'
+
+  DINO_wo_MultiScaleProjection:
+    input_length: 1
+    target_length: 1
+    variables_input: [0]
+    variables_output: [0]
+    downsample_factor: 1
+    data_path: './data/McWilliams2d_fp32_128x128_N1280_Re5000_T100.pt'
+
+  DifferentialOnlyDINO:
+    input_length: 1
+    target_length: 1
+    variables_input: [0]
+    variables_output: [0]
+    downsample_factor: 1
+    data_path: './data/McWilliams2d_fp32_128x128_N1280_Re5000_T100.pt'
+
+  IntegralOnlyDINO:
+    input_length: 1
+    target_length: 1
+    variables_input: [0]
+    variables_output: [0]
+    downsample_factor: 1
+    data_path: './data/McWilliams2d_fp32_128x128_N1280_Re5000_T100.pt'
+
+
+
+loggings:
+  DINO:
+    backbone: 'DINO_0519_McWilliams2d_ablation'
+    log_dir: './runs/logs'
+    checkpoint_dir: './runs/checkpoints'
+    result_dir: './runs/results'
+
+  DINO_wo_OperatorEvolution:
+    backbone: 'DINO_wo_HDS_McWilliams2d_ablation'
+    log_dir: './runs/logs'
+    checkpoint_dir: './runs/checkpoints'
+    result_dir: './runs/results'
+
+  DINO_wo_MultiScaleProjection:
+    backbone: 'DINO_wo_MG_McWilliams2d_ablation'
+    log_dir: './runs/logs'
+    checkpoint_dir: './runs/checkpoints'
+    result_dir: './runs/results'
+
+  DifferentialOnlyDINO:
+    backbone: 'HighFrequencyOnlyDINO_McWilliams2d_ablation_exp1'
+    log_dir: './runs/logs'
+    checkpoint_dir: './runs/checkpoints'
+    result_dir: './runs/results'
+
+  IntegralOnlyDINO:
+    backbone: 'LowFrequencyOnlyDINO_McWilliams2d_ablation_exp1'
+    log_dir: './runs/logs'
+    checkpoint_dir: './runs/checkpoints'
+    result_dir: './runs/results'
